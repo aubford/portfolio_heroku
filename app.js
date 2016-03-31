@@ -38,15 +38,18 @@ app.get('/download', function(req, res){
 app.post('/mail', function(req,res){
 
   var data = {
-    from: 'Excited User <me@samples.mailgun.org>',
+    from: req.body.email,
     to: 'musicaubrey@gmail.com',
     subject: 'RESPOND WITHIN 24 HOURS!',
-    text: req.body.name +"  "+ req.body.phone +"  "+ req.body.email + "n/" + req.body.message
+    text: req.body.name +"  "+ req.body.phone +"  "+ req.body.email + "\n" + req.body.message
   }
 
   mailgun.messages().send(data, function (error, body) {
     console.log(body)
   })
 
-  res.redirect('/')
+  setTimeout(function(){
+    res.redirect('/')
+  },700)
+
 })

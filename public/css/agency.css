@@ -335,6 +335,7 @@ section h3.section-subheading {
 }
 #portfolio .portfolio-item .portfolio-caption {
   margin: 0 auto;
+  border: 1px solid black;
   background-color: white;
   text-align: center;
   padding: 25px;
@@ -354,7 +355,7 @@ section h3.section-subheading {
 }
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
-    margin: 0 0 30px;
+    margin: 0 0 100px;
   }
 }
 .timeline {
@@ -741,4 +742,9 @@ body {
 .download-icon {
   font-size: 70px;
   margin-bottom: 60px;
+}
+#thanks {
+  color: #fed136;
+  margin-bottom: 60px;
+  font-size: 40pt;
 }
