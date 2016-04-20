@@ -3,6 +3,8 @@
 var express = require('express')
 var logger = require('morgan')
 var app = express()
+var path = require('path')
+var favicon = require('serve-favicon')
 app.use(logger('dev'))
 app.use(express.static('public'))
 var http = require('http')
@@ -11,12 +13,13 @@ app.set('port', port)
 var server = http.createServer(app)
 server.listen(port)
 
+app.use(favicon(path.join(_dirname, 'public', 'favicon.ico')))
+
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 var mailgun = require('mailgun-js')({apiKey: 'key-a0322b3bd52da691b2cca7d45be0c76b', domain: 'mg.aubrey-ford.com'})
-
 
 function normalizePort(val) {
   var port = parseInt(val, 10)
