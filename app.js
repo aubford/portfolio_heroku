@@ -13,7 +13,7 @@ app.set('port', port)
 var server = http.createServer(app)
 server.listen(port)
 
-app.use(favicon(path.join(_dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
